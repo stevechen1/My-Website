@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/iconfont/iconfont.css" >
+</head>
+<style>
+    html,
+    body{
+        height: 100%;
+        background: rgb(0, 0, 17);
+    }
+   header{
+       position: relative;
+       height: 100%;
+       min-height: 600px;
+       background: #001  url(http://cdn.hommk.com/pcgame/ubi2015/img/gamezone/r6/top_roles2.png) center center no-repeat;
+       background-size: cover;
+   }
+   header .logo {
+       color: #eee;
+       font-size: 50px;
+       font-family: bold;
+       float: left;
+       margin-top: 30px;   
+   }
+   header .nav {
+       float: right;    
+   }
+   header .nav > li {
+        float: left;
+   }
+    h2,h1{
+        color: #eee;
+    }
+    header .nav a {
+        color: #fff;
+        font-size: 20px;
+        padding: 20px;
+        margin-top: 20px;
+        display: inline-block;
+        border-radius: 5px;
+    }
+    header .nav a:hover {
+        background: lightyellow;
+        color: #111;
+    }
+    header .intro{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);     
+        text-align: center;
+    }
+    header .intro h2{
+        font-size: 30px;
+    }
+    header .intro h1{
+        font-size: 60px;
+        margin-top: 20px;
+    }
+    header .intro .button{
+        margin-top: 40px;
+    }
+    .button{
+        font-size: 40px;
+        color: #000;
+        background-color:rgb(255, 219, 0);
+        padding: 25px 50px;
+        border-radius: 5px;
+        display: inline-block;
+        opacity: 0.9;   
+    }
+    .button:hover{
+        opacity: 1;
+    }
+    
+    section{
+        
+        text-align: center;   
+    }
+    section h3{
+        color: #eee;
+        margin-top: 60px;
+        font-size: 80px;
+    }
+    .game-intro p{
+        color: #eee;
+        margin-top: 20px;
+        font-size: 20px;   
+    }
+    section  h4{
+        font-size: 50px;
+        display: block;
+        margin-top: 40px;
+        color: #eee;
+    }
+   
+    .game-intro ul  li{
+        float: left;
+        width: 25%;
+        padding: 30px;
+    }
+    img{
+       border-radius: 10px;
+    }
+    section  img:hover {
+    opacity: 0.7;
+    transition: all .8s;
+    }
+    .game-update li {
+        position: relative;
+    }
+    .game-update li:nth-child(odd) img{
+        float: right;
+        width: 200px;
+        height: 200px;
+        border: 5px lightblue solid;
+        border-radius: 50%;   
+    }
+    .game-update li:nth-child(even) img{
+        float: left;
+        width: 200px;
+        height: 200px;
+        border: 5px lightblue solid;
+        border-radius: 50%; 
+    }
+    .game-update > li {
+        content: '';
+        clear: both;
+        display: block;
+    }
+    .game-update h3{
+        margin-top: 200px;
+    }
+    .game-update dl {
+        color: #eee;
+        font-size: 20px;
+        margin-top: 40px;
+    }
+    .game-update dt{
+        font-size: 50px;
+    }
+    .game-update > ul > li:nth-child(odd){
+        margin-top: 160px;
+        padding-right: calc(50% - 100px);
+        text-align: right;
+    }
+    .game-update > ul > li:nth-child(even) {
+        margin-top: 160px;
+        padding-left: calc(50% - 100px) ;
+        text-align: left;
+    }
+    .game-update li:nth-child(odd) dl{
+        margin-right: 250px;
+    }
+    .game-update li:nth-child(even) dl {
+        margin-left: 250px; 
+    }
+    .game-update  li::before{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        right: 50%;
+        top: 200px;
+        margin-right: -5px;
+        height: 130px;
+        width: 5px;
+        background-color: lightblue;
+    }
+    .game-update li:last-child::before{
+        display: none;
+    }
+    section span{
+        display: block;
+        color: #eee;
+        margin-top: 20px;
+        font-size: 20px; 
+    }
+    .contact {
+        position: relative;
+        padding: 12% 0;
+    }
+
+    .contact-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .contact-layout div {
+        width: 50%;
+    }
+
+    .person-input {
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        align-items: flex-end;
+        margin: 0 30px;
+    }
+
+    .person-input input {
+        font-size: 16px;
+        line-height: 1.5;
+        width: 50%;
+        min-width: 300px;
+        padding: 10px;
+        margin-top: 50px;
+        border-radius: 4px;
+    }
+    
+    .infor-input {
+        height: 300px;
+        margin: 0 30px;
+        display: block;
+    }
+
+    .infor-input textarea {
+        font-size: 16px;
+        line-height: 1.5;
+        width: 50%;
+        min-width: 300px;
+        height: 250px;
+        padding: 10px;
+        margin-top: 50px;
+        border-radius: 4px;
+    }
+    section .sub-button{ 
+        display: inline-block;
+        font-size: 35px;
+        right: 42%;
+        top:85%;
+        position: absolute;
+        border-radius: 10px;
+        color: #000;
+        background-color: rgb(230, 200, 2);
+        width: 160px;
+        height: 60px;
+        opacity: 0.8;
+    }
+    section .sub-button:hover {
+        opacity: 1;
+
+    }
+    footer {
+        display: flex;
+        background-color: lightslategray;
+        height: 70px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer .iconfont {
+        font-size: 26px;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0 20px;
+        font-size: 40px;
+    }
+    footer span {
+        margin-left: 200px;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+</style>
+<body>
+    <header> 
+        <div class="navbar layout clearfix">
+            <a class="logo" href="#">彩虹6号围攻</a>
+            <ul class="nav">
+                <li><a href="#">游戏介绍</a></li>
+                <li><a href="#">最新新闻</a></li>
+                <li><a href="#">游戏角色</a></li>
+                <li><a href="#">游戏更新</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul> 
+        </div>
+        <div class="intro">
+            <h2>谈判破裂</h2>
+            <h1>准  备 战  斗</h1>
+            <a href="#" class="button" >join us</a>
+        </div>
+    </header>
+    
+    
+    <main class="layout ">
+        <section class="game-intro">
+            <h3>游戏介绍</h3>
+            <p>游戏模式共四种，分别是人质模式、肃清威胁、炸弹模式和PVE， 四个游戏模式的核心都是进攻与防守</p>
+            <ul class="clearfix">
+                <li >
+                    <a href="">
+                        <img src="http://static9.cdn.ubi.com/resource/en-GB/game/rainbow6/siege/R6-game-info-units_210380.jpg" alt="">
+                        <h4>人质模式</h4>
+                        <p>Rainbow Six Siege《彩虹六号：围攻》当中将收录来自全球 5 个知名真实反恐特勤队的「特勤干员」（Operator），包含英国 SAS、美国 FBI 与 SWAT、法国 GIGN、德国 GSG9 以及俄罗斯 Spetsnaz。这些特勤干员各自拥有独特的专精技能来执行任务，包含不同个性与装备，有些将目标着重在突击、有些则偏向防御，他们将可与团队结合并且创造出全新的攻坚策略运用。</p>
+                    </a>
+                </li>
+                <li>
+                        <a href="">
+                            <img src="http://static9.cdn.ubi.com/resource/en-GB/game/rainbow6/siege/R6-game-info-gameplay_210378.jpg" alt="">
+                            <h4>围攻玩法</h4>
+                            <p>启发自真实世界中的反恐行动，Rainbow Six Siege《彩虹六号：围攻》邀请玩家主宰破坏的艺术，展开激烈的 CQC 近身距离作战，带来高致命性、仰赖战术策略、充满团队合作及爆破场面的核心游玩体验；本作的多人游戏将为过往丰富系列作当中激烈交火与战术策略设下新的标竿。 </a>
+                </li>
+                <li>
+                            <a href="">
+                                <img src="http://static9.cdn.ubi.com/resource/en-GB/game/rainbow6/siege/R6-game-info-destruction_210377.jpg" alt="">
+                                <h4>场景破坏</h4>
+                                <p>场景破坏是「围攻」游玩要素当中的关键，透过 Ubisoft 蒙特利尔（Montreal）工作室所自行打造的 Realblast 技术、带来过去未曾有过的环境破坏效果。像是打穿墙壁、创造新的火线、即使天花板和地板也都能遭受破坏来创造新的突入点，带来拟真与非脚本式预先定义的程序性环境破坏要素。这意味着游戏场景将更为真实、独特且充满变化，例如子弹口径或炸药用量的不同都能产生不同的效果。这些都将赋予玩家截然不同的游玩方式与战术策略运用、成为游戏致胜关键。                            </a>
+                </li>
+                <li>
+                        <a href="">
+                            <img src="http://static9.cdn.ubi.com/resource/en-GB/game/rainbow6/siege/R6-game-info-team-up_210379.jpg" alt="">
+                            <h4>团队协作</h4>
+                            <p>在《彩虹六号：围攻》中，配合是胜利的关键。和你的朋友一起组队获得最佳的游戏体验，在近距离环境下进行紧张刺激的PVP和PVE战斗并且带领队伍开辟正确的进攻路线。 选择最正确的组合打造队伍，并打造最佳战略成为战场的主宰。                     </a>
+                </li>
+            </ul>
+
+        </section>
+        <section class="game-update layout">
+            <h3>游戏更新</h3>
+            <ul>
+                <li >
+                    <img src="http://cdn.hommk.com/pcgame/ubi2015/gamezone/r6/grimsky/update_grimsky.jpg" alt="">
+                    <dl class="content">
+                        <dt>暗空行动</dt>
+                        <dd>在暗空行动中, Clash与Maverick加入了彩虹小队。他们分别是反暴乱与高精度打击的专家，即将在重制后的赫里福基地接受训练。 第三年度第三赛季会解决武器瞄准对不齐的问题，调整干员闲置选择机制，并改善主机平台的动态分辨率适配。顶板也得到了重制，它们的摧毁效果得到了改善。最后，除了游戏调整和Bug修复之外，敬请期待领事馆地图的增强。</dd>
+                    </dl>
+                </li>
+               
+                <li >
+                        <img src="http://cdn.hommk.com/pcgame/ubi2015/img/gamezone/r6/update_parabellum.jpg?1" alt="">
+                        <dl class="content">
+                            <dt>备战行动</dt>
+                            <dd>在备战行动中, 两名 G.I.S 特勤干员让托斯卡尼的艳阳相形见绌。彩虹小队派出 Maestro 和 Alibi 进入最凶险的犯罪家族之一的别墅。 
+
+                                    第三年度第二赛季带来了大量创新，加入了一种新的情报道具，改进了俱乐部地图，增强了Echo，进行了大量游戏性修正，并加入了Pick & Ban系统。</dd>
+                        </dl>
+                    </li>
+                    <li >
+                            <img src="http://cdn.hommk.com/pcgame/ubi2015/img/gamezone/r6/update_chimera.jpg" alt="">
+                            <dl class="content">
+                                <dt>暗空行动</dt>
+                                <dd>在奇美拉行动中,两名新干员加入了彩虹六号小队来协助控制一场袭击了新墨西哥州一个小镇的神秘寄生虫感染事件。为了确保全局，六号选择了世界上最优秀的生化专家：Lion和Finka.</dd>
+                            </dl>
+                    </li>
+                    <li >
+                            <img src="http://cdn.hommk.com/pcgame/ubi2015/img/gamezone/r6/update_wn.jpg" alt="">
+                            <dl class="content">
+                                <dt>白噪声行动</dt>
+                                <dd>在白噪声行动中，两名来自707特种部队的彩虹小队特勤干员进入高耸的的Mok Myeok塔，本赛季加入的全新免费地图。第二名来自GROM特种部队的彩虹干员也加入了这次行动。 
+                                        在这个第二年的最后一个赛季，我们想要从以下方面改进玩家的体验：为手枪增加新的后坐力动画，干员技能的新UI提示和手榴弹轨迹同步。更多细节请看下面。</dd>
+                            </dl>
+                    </li>
+                    <li >
+                            <img src="http://cdn.hommk.com/pcgame/ubi2015/img/gamezone/r6/update_bh.jpg" alt="">
+                            <dl class="content">
+                                <dt>血兰花行动</dt>
+                                <dd>在血兰花行动中，两名特勤干员加入了彩虹小队中， 突击主题公园。随着数据优化，第三赛季会展现重制后的地图、干员、材质，带来新的动态、静态光线效果，更丰富的天空层次，新的自定义选项，还有许多其他功能。</dd>
+                            </dl>
+                    </li>
+                  
+            </ul>
+        </section>
+        <section class="contact">
+            <h3>联系我们</h3>
+            <span>育碧（Ubisoft）是研发、发行与销售互动式娱乐游戏与服务的领导企业</span>
+                <div class="contact-layout">
+                    <div class="person-input">
+                        <input id="name" placeholder="你的姓名" type="text" name="name" value="">
+                        <input id="email" placeholder="你的邮箱" type="email" name="email" value="">
+                        <input id="phone" placeholder="你的电话号码" type="tel" name="phone" value="">
+                    </div>
+                <div class="infor-input">
+                        <textarea type="text" name="message" id="message" cols="30" rows="10" placeholder="你的建议" value=""></textarea>
+                </div>  
+                        <a href="#" class="sub-button">提交</a>
+            </section>
+    </main>
+    
+    <footer>
+        <a class="iconfont icon-weixin" href="#"></a>
+        <a class="iconfont icon-weibo1" href="#"></a>
+        <a class="iconfont icon-facebook" href="#"></a>
+        <span>©2006-2013 Ubisoft Entertainment</span>
+    </footer>
+</body>
+</html>

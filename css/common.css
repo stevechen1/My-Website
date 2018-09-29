@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #eee; 
+}
+li{
+    list-style: none;
+}
+body{
+   font-family: fantasy;
+   font-size: 16px;
+}
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+.layout{
+    width: 1900px;
+    margin: 0 auto;
+}
+img{
+    width: 400px;
+    height: 250px;
+}
